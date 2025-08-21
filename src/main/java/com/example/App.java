@@ -94,21 +94,21 @@ public class App {
                     ", Tiempo: " + resultado.tiempo + " ns");
         }
 
-        // Crear la serie de datos para la gráfica
+        // Crear la serie de datos para la grafica
         XYSeries series = new XYSeries("Tiempo de ejecución");
         for (Resultado resultado : resultados) {
             series.add(resultado.cantidad, resultado.tiempo);
         }
         XYSeriesCollection dataset = new XYSeriesCollection(series);
 
-        // Crear la gráfica
+        // Crear la grafica
         JFreeChart chart = ChartFactory.createXYLineChart(
                 "Tiempo de ejecución vs Cantidad de números",
                 "Cantidad de números",
                 "Tiempo (ns)",
                 dataset);
 
-        // Mostrar la gráfica en una ventana
+        // Mostrar la grafica en una ventana
         JFrame frame = new JFrame("Gráfica de tiempos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ChartPanel(chart));
